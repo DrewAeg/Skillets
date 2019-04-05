@@ -1,5 +1,11 @@
 # Configure the Microsoft Azure Provider
-provider "azurerm" {}
+provider "azurerm" {
+
+  subscription_id = "${var.subscription_id}"
+  client_id       = "${var.client_id}"
+  client_secret   = "${var.client_secret}"
+  tenant_id       = "${var.tenant_id}"
+}
 
 # Create a resource group if it doesn’t exist
 resource "azurerm_resource_group" "panhandler" {
@@ -15,7 +21,8 @@ resource "azurerm_public_ip" "pavm_public_ip" {
   name = "pavm_public_ip"
   location = "eastus"
   resource_group_name = "${azurerm_resource_group.panhandler.name}"
-  public_ip_address_allocation = "Dynamic"
+//  public_ip_address_allocation = "Dynamic"
+  allocation_method = "Dynamic"
 
   tags {
     environment = "test"

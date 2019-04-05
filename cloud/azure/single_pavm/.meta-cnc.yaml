@@ -39,5 +39,21 @@ variables:
     description: Resource Group
     default: panhandler-unique-value-123
     type_hint: text
+  - name: subscription_id
+    description: Subscription Id
+    default: 000-000-000-000
+    type_hint: text
+  - name: tenant_id
+    description: Tenant Id
+    default: 000-000-000-000
+    type_hint: text
+  - name: client_id
+    description: Client Id
+    default: 000-000-000-000
+    type_hint: text
+  - name: client_secret
+    description: Client Secret
+    default: 000-000-000-000
+    type_hint: password
 
 
