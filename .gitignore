@@ -4,6 +4,9 @@ terraform.tfstate.backup
 .terraform
 .idea
 .DS_Store
+.cnc_plan
+Pipfile*
+.pipenv_init_done
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
