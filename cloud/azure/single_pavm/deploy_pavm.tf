@@ -4,7 +4,7 @@ provider "azurerm" {
 
 # Create a resource group if it doesn’t exist
 resource "azurerm_resource_group" "panhandler" {
-  name = "${var.resource_group}"
+  name = "panhandler_rg_${random_id.randomId}"
   location = "eastus"
 
   tags {
