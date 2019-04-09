@@ -39,5 +39,9 @@ variables:
     description: Hostname
     default: panhandler_azure_vm_01
     type_hint: text
+  - name: resource_group
+    description: Resource Group
+    default: panhandler-unique-value-123
+    type_hint: text
 
 
