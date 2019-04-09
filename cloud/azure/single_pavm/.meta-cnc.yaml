@@ -37,7 +37,7 @@ variables:
     type_hint: password
   - name: hostname
     description: Hostname
-    default: panhandler_azure_vm_01
+    default: panhandler-vm-01
     type_hint: text
   - name: resource_group
     description: Resource Group
