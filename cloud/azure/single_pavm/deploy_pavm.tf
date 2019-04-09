@@ -4,7 +4,7 @@ provider "azurerm" {
 
 # Create a resource group if it doesn’t exist
 resource "azurerm_resource_group" "panhandler" {
-  name = "panhandler_rg_${random_id.randomId}"
+  name = "panhandler_rg_${random_id.randomId.hex}"
   location = "eastus"
 
   tags {
@@ -163,7 +163,7 @@ resource "azurerm_virtual_machine" "pavm" {
   //  }
 
   os_profile {
-    computer_name = "pavm"
+    computer_name = "${var.hostname}"
     admin_username = "${var.admin_username}"
     admin_password = "${var.admin_password}"
   }
