@@ -33,7 +33,7 @@ variables:
 snippets:
   - name: track
     path: https://api.paloaltonetworks.com/api/license/get
-    operationL: post
+    operation: post
     payload: payload.j2
     headers:
       apiKey: '{{ api_key }}'
