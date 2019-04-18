@@ -32,8 +32,9 @@ variables:
 
 snippets:
   - name: track
-    path: https://api.paloaltonetworks.com/api/license/get?authCode={{ authcode }}
-    operationL: get
+    path: https://api.paloaltonetworks.com/api/license/get
+    operationL: post
+    payload: payload.j2
     headers:
       apiKey: '{{ api_key }}'
       ContentType: application/x-www-form-urlencoded
