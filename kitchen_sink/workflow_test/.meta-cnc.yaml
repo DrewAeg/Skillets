@@ -36,17 +36,8 @@ variables:
 # in the 'variables' section.
 snippets:
   - name: generate_api_key
-    attributes:
-      header: "Step 1: Generate an API Key"
-      title: "Enter Information below"
   - name: get_system_info
-    attributes:
-      header: "Step 2: Get System Information"
-      title: "Enter Information below"
   - name: get_system_info_debug
-    attributes:
-      header: "Step 3: Display Information"
-      title: "Enter Information below"
 
 
 
