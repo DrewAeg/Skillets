@@ -33,6 +33,13 @@ variables:
     description: No Bueno
     default: wrong-name
     type_hint: disabled
+  - name: no_override
+    description: No Bueno
+    default: wrong-name
+    type_hint: disabled
+    force_default: True
+
+# Snippets is an ordered list of configuration xml fragments that will be pushed to the Pan-OS NGFW. The xpath
 
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the Pan-OS NGFW. The xpath
 # determines where in the configuration heirarchy the xml fragment will be set. 'file' indicates the name of the file
