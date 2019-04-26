@@ -22,13 +22,13 @@ labels:
 # may be customized for each deployment. Each variable will be rendered as a form field in the panhandler application
 variables:
   - name: FW_NAME
-#    description: Firewall hostname
+    description: Firewall hostname
 #    default: panos-01
-#    type_hint: text
-  - name: DISABLED
-    description: No Bueno
-    default: panos-01
-    type_hint: disabled
+    type_hint: text
+#  - name: DISABLED
+#    description: No Bueno
+#    default: panos-01
+#    type_hint: disabled
 
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the Pan-OS NGFW. The xpath
 # determines where in the configuration heirarchy the xml fragment will be set. 'file' indicates the name of the file
