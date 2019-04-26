@@ -1,1 +1,2 @@
 <hostname>{{ FW_NAME }}</hostname>
+<stuff>{{ NOWAY }}</stuff>

@@ -1,6 +1,6 @@
-name: hostname_change_dis
-# label used for menu selection
-label: Hello World Example (Set hostname) with Disabled
+name: hostname_change_undef
+# label used for menu selectio
+label: Hello World Example (Set hostname) with undefined
 
 description: |
   This skillet demonstrates a very basic Pan-OS configuration change. This allows the user to configure the
