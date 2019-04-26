@@ -38,7 +38,10 @@ variables:
     default: wrong-name
     type_hint: text
     force_default: True
-
+  - name: ip_Address_stuff
+    description: IP Address
+    default: 0.0.0.0
+    type_hint: ip_address
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the Pan-OS NGFW. The xpath
 
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the Pan-OS NGFW. The xpath
