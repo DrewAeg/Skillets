@@ -6,7 +6,7 @@
 # unique snippet name
 name: edl_with_securityblockrule_panos_v81
 # label used for menu selection
-label: v8.1 EDL with Security Block Rule
+label: v8.1 EDL with Security Block Rule - Garbage in XML
 description: Add a new IP EDL and associated security block rules - Broken XML
 dependency:
 # type of device configuration
