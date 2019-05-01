@@ -3,8 +3,7 @@ name: hostname_change_dis_broken_vars
 label1: Hello World Example (Set hostname) with Broken Variables secrion
 
 description: |
-  This skillet demonstrates a very basic Pan-OS configuration change. This allows the user to configure the
-  hostname on a Pan-OS NGFW
+  This skillet has garbage in a variables default value and an invalid type_hint
 
 # type of skillet (panos or panorama or template or terraform)
 type: panos1
