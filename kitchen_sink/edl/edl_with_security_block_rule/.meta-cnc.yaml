@@ -7,7 +7,7 @@
 name: edl_with_securityblockrule_panos_v81
 # label used for menu selection
 label: v8.1 EDL with Security Block Rule
-description: Add a new IP EDL and associated security block rules
+description: Add a new IP EDL and associated security block rules - Broken XML
 dependency:
 # type of device configuration
 type: panos
@@ -16,6 +16,7 @@ extends:
 # grouping of like snippets for dynamic menu creation in pan-cnc
 labels:
   service_type: minemeld
+  collection: Broken Skillets
 
 # variables used in the configuration templates
 # type_hint defines the form field type in pan-cnc
