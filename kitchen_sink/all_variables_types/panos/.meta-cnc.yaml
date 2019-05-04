@@ -83,6 +83,14 @@ variables:
     description: Email
     default: support@noway.com
     type_hint: email
+  - name: password
+    description: Password
+    default:
+    type_hint: password
+  - name: hostname
+    description: Host Or IP
+    default: 1.2.3.4
+    type_hint: hostname_or_ip
   - name: number
     description: Some Number
     default: 1001
