@@ -1,9 +1,9 @@
-name: hostname_change_dis_broken_vars
+name: all_variables
 # label used for menu selection
-label1: Hello World Example (Set hostname) with Broken Variables secrion
+label1: All Variable Types
 
 description: |
-  This skillet has garbage in a variables default value and an invalid type_hint
+  This skillet has all defined varialble types for testing
 
 # type of skillet (panos or panorama or template or terraform)
 type: panos1
