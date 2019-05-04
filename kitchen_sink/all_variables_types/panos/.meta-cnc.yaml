@@ -43,7 +43,7 @@ variables:
         value: False
   - name: yes_no
     description: Yes No
-    default: 'Yes'
+    default: 'No'
     type_hint: dropdown
     dd_list:
       - key: 'yes'
