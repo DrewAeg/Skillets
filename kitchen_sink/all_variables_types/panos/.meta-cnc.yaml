@@ -87,6 +87,9 @@ variables:
     description: Some Number
     default: 1001
     type_hint: number
+    attributes:
+      min: 1000
+      max: 2000
 
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the Pan-OS NGFW. The xpath
 # determines where in the configuration heirarchy the xml fragment will be set. 'file' indicates the name of the file
