@@ -43,13 +43,13 @@ variables:
         value: False
   - name: yes_no
     description: Yes No
-    default: 'No'
+    default: 'No I dont'
     type_hint: dropdown
     dd_list:
-      - key: 'yes'
-        value: 'Yes'
-      - key: 'no'
-        value: 'No'
+      - key: 'Yes I do'
+        value: 'yes'
+      - key: 'No I dont'
+        value: 'no'
 
 
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the Pan-OS NGFW. The xpath
