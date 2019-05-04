@@ -1,12 +1,12 @@
 name: all_variables
 # label used for menu selection
-label1: All Variable Types
+label: All Variable Types
 
 description: |
   This skillet has all defined varialble types for testing
 
 # type of skillet (panos or panorama or template or terraform)
-type: panos1
+type: panos
 
 # more complex skillets may express a dependency on another skillet that should be loaded before this one.
 # For example, a set of skillets may build off of a single 'golden config' that contains shared configuration
@@ -43,13 +43,13 @@ variables:
         value: False
   - name: yes_no
     description: Yes No
-    default: Yes
+    default: 'Yes'
     type_hint: dropdown
     dd_list:
-      - key: yes
-        value: Yes
-      - key: no
-        value: No
+      - key: 'yes'
+        value: 'Yes'
+      - key: 'no'
+        value: 'No'
 
 
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the Pan-OS NGFW. The xpath
