@@ -50,6 +50,13 @@ variables:
         value: 'yes'
       - key: 'No I dont'
         value: 'no'
+  - name: text_area
+    description: Multi-Line Input
+    default: |
+      This is some very long input with lots of
+      newlines and white    space
+      and stuff
+    type_hint: text_area
 
 
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the Pan-OS NGFW. The xpath
