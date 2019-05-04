@@ -68,7 +68,21 @@ variables:
         value: 'no'
       - key: 'Maybe'
         value: 'maybe'
-
+  - name: radio_box_example
+    description: radios
+    default: maybe
+    type_hint: radio
+    rad_list:
+      - key: 'Yes'
+        value: 'yes'
+      - key: 'No'
+        value: 'no'
+      - key: 'Maybe'
+        value: 'maybe'
+  - name: email
+    description: Email
+    default: support@noway.com
+    type_hint: email
 
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the Pan-OS NGFW. The xpath
 # determines where in the configuration heirarchy the xml fragment will be set. 'file' indicates the name of the file
