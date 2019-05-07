@@ -91,9 +91,13 @@ variables:
     description: Host Or IP
     default: 1.2.3.4
     type_hint: fqdn_or_ip
-  - name: interface address
+  - name: interface_address
     description: CIDR
     default: 1.2.3.4/24
+    type_hint: cidr
+  - name: interface_address_2
+    description: CIDR_2
+    default: 4.5.6.7/32
     type_hint: cidr
   - name: number
     description: Some Number
