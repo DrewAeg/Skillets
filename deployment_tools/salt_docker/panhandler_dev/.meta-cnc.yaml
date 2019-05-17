@@ -36,7 +36,7 @@ variables:
     attributes:
       min: 8000
       max: 8100
-  - name: provision_username
+  - name: provisioner_username
     description: Provisioner Username
     default: salt
     type_hint: text
