@@ -56,4 +56,6 @@ snippets:
     path: https://localhost:{{ provisioner_port }}
     operation: post
     payload: launch_container.j2
+    headers:
+      Content-Type: application/json
 
