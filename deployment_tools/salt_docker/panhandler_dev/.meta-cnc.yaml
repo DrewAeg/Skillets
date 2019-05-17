@@ -27,7 +27,7 @@ variables:
     default: 8081
     type_hint: number
     attributes:
-      min: 8100
+      min: 8080
       max: 69000
   - name: provisioner_port
     description: Provisioner Port
@@ -35,7 +35,7 @@ variables:
     type_hint: number
     attributes:
       min: 8000
-      max: 8100
+      max: 8079
   - name: provisioner_username
     description: Provisioner Username
     default: salt
@@ -47,7 +47,7 @@ variables:
 
 snippets:
   - name: salt_login
-    path: https://localhost:{{ provisoner_port }}/login
+    path: https://localhost:{{ provisioner_port }}/login
     operation: post
     payload: auth.j2
     headers:
