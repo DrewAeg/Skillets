@@ -50,6 +50,8 @@ snippets:
     path: https://localhost:{{ provisoner_port }}/login
     operation: post
     payload: auth.j2
+    headers:
+      - Content-Type: x-www-form-urlencoded
   - name: deploy_panhandler_dev
     path: https://localhost:{{ provisioner_port }}
     operation: post
