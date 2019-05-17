@@ -51,7 +51,7 @@ snippets:
     operation: post
     payload: auth.j2
     headers:
-      Content-Type: x-www-form-urlencoded
+      Content-Type: application/x-www-form-urlencoded
   - name: deploy_panhandler_dev
     path: https://localhost:{{ provisioner_port }}
     operation: post
