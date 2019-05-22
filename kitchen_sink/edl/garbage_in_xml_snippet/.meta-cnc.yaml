@@ -4,7 +4,7 @@
 # associated to John Newsome Minemeld demo
 
 # unique snippet name
-name: edl_with_securityblockrule_panos_v81
+name: edl_with_securityblockrule_panos_v81_broken
 # label used for menu selection
 label: v8.1 EDL with Security Block Rule - Garbage in XML
 description: Add a new IP EDL and associated security block rules - Broken XML
