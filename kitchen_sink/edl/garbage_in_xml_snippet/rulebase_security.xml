@@ -1,4 +1,5 @@
 <rules>
+  MALFORMDED XML HERE with special chars !@#@#$#$$^%^^&*%&^^#%{|}{!@#
   <entry name="Outbound {{ edl_name }} block">
     <description>Outbound block rule based on EDL {{ edl_name }}</description>
     <to>
