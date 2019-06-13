@@ -16,7 +16,7 @@ resource "azurerm_public_ip" "pavm_public_ip" {
   name = "pavm_public_ip"
   location = "eastus"
   resource_group_name = "${azurerm_resource_group.panhandler.name}"
-//  public_ip_address_allocation = "Dynamic"
+  //  public_ip_address_allocation = "Dynamic"
   allocation_method = "Dynamic"
 
   tags {
@@ -156,11 +156,6 @@ resource "azurerm_virtual_machine" "pavm" {
     caching = "ReadWrite"
     create_option = "FromImage"
   }
-
-  //  storage_data_disk {
-  //    name = "config_drive"
-  //    create_option = "attach"
-  //  }
 
   os_profile {
     computer_name = "${var.hostname}"
