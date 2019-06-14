@@ -38,7 +38,7 @@ variables:
 snippets:
   - name: generate_cert
     path: >-
-      /api/?type=op&cmd=
+      https://{{ TARGET_IP }}/api/?type=op&cmd=
       <request><certificate><generate><ca>yes</ca><certificate-name>CAroot</certificate-name><name>{{ cert_name }}
       </name><algorithm><RSA><rsa-nbits>2048</rsa-nbits></RSA></algorithm></generate></certificate></request>
       &key={{ api_key }}
