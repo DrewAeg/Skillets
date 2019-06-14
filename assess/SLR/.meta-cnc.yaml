@@ -15,7 +15,6 @@ extends:
 # Labels allow grouping and type specific options and are generally only used in advanced cases
 labels:
   collection:
-    - Python
     - SLR Tools
     - Assess
 
