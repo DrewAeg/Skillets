@@ -21,6 +21,10 @@ labels:
 # variables define the things an operator may customize in this skillet. Things like DNS servers, NTP addresses, etc
 # may be customized for each deployment. Each variable will be rendered as a form field in the panhandler application
 variables:
+  - name: TARGET_IP
+    description: Host
+    default: 127.0.0.1
+    type_hint: fqdn_or_ip
   - name: api_key
     description: API Key
     default: abc123
