@@ -7,7 +7,9 @@
 #
 import os
 
+print('*'*80)
 print('This is an example python script. All stdout will be returned to the user')
+print('\n')
 print('The user has entered 3 values from the Panhandler UI')
 
 # each variable will be present in the environ dict on the 'os' module
@@ -24,3 +26,5 @@ if len(password) < 12:
     print('That password is pretty weak!')
 else:
     print('The entered password is pretty strong!')
+
+print('*'*80)

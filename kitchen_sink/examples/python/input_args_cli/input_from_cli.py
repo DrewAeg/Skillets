@@ -2,14 +2,18 @@
 #
 # This example uses CLI arguments to gather input from the user
 # The .meta-cnc file defines 3 input variables:
-# USERNAME, PASSWORD, SECRET
+# username, password, and secret
+#
 # This script shows how to obtain the values entered from the user
 #
+
 import argparse
 import sys
 
 
 def main():
+    print('*' * 80)
+
     print('This is an example python script. All stdout will be returned to the user')
     print('The user has entered 3 values from the Panhandler UI')
 
@@ -34,6 +38,8 @@ def main():
         print('That password is pretty weak!')
     else:
         print('The entered password is pretty strong!')
+
+    print('*'*80)
 
 
 if __name__ == '__main__':
