@@ -3,7 +3,7 @@ name: python3_output_example
 label: Python Script with Output Capturing
 
 description: |
-  This skillet demonstrates a simple Python script that returns JSON data and captured specific variables from
+  This skillet demonstrates a simple Python script that returns JSON data and captures specific variables from
   the output.
 
 # type of skillet (panos or panorama or template or terraform)
@@ -33,6 +33,7 @@ variables:
 snippets:
   - name: script
     file: output_capture.py
+    input_type: env
     output_type: json
     outputs:
       - name: captured_username
