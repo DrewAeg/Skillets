@@ -3,7 +3,8 @@ name: generate_api_key
 label: Generate PAN-OS API Key
 
 description: |
-  This skillet demonstrates a simple REST api call to a PAN-OS NGFW to generate a new API Key
+  This skillet demonstrates a simple REST api call to a PAN-OS NGFW to generate a new API Key. This key will
+  then be stored in your session for future use by other skillets that require the 'api_key' variable.
 
 # type of skillet (panos or panorama or template or terraform)
 type: rest
@@ -24,7 +25,7 @@ variables:
   - name: TARGET_IP
     description: Host
     default: 127.0.0.1
-    type_hint: ip_address
+    type_hint: fqdn_or_ip
   - name: TARGET_USERNAME
     description: Username
     default: admin
