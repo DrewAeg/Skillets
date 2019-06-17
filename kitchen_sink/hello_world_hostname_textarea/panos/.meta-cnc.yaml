@@ -28,7 +28,7 @@ variables:
   - name: test_var
     description: Firewall description
     default:
-    type_hint: textarea
+    type_hint: text_area
 
 
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the Pan-OS NGFW. The xpath
