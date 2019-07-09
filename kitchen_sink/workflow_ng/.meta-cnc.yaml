@@ -29,15 +29,16 @@ variables:
     type_hint: text
 
 
-# Snippets is an ordered list of configuration xml fragments that will be pushed to the PAN-OS NGFW. The xpath
-# determines where in the configuration hierarchy the xml fragment will be set. 'file' indicates the name of the file
-# to load and parse. Jinja2 style variables will be variable interpolated using the values of the 'variables' defined
-# in the 'variables' section.
+# workflow snippets call other Skillets but they have the opportunity to modify the skillet variables and workflow
+# during 3 phases#
+# pre_processor gets called before the form is rendered
+# form_validator gets called after the form is submitted but before any action is taken
+# post_processor gets called after the form is submitted and after the skillet action is performed
 snippets:
   - name: generate_api_key
     pre_processor: step1_pre.py
     form_validator: step1_validator.py
-    post_processor: step1.py
+    post_processor: step1_post.py
   - name: get_system_info
     post_processor: step2.py
   - name: get_system_info_debug
