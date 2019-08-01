@@ -20,15 +20,6 @@ labels:
 # variables define the things an operator may customize in this skillet. Things like DNS servers, NTP addresses, etc
 # may be customized for each deployment. Each variable will be rendered as a form field in the panhandler application
 variables:
-  - name: api_key
-    description: API Key
-    default: abc123
-    type_hint: text
-  - name: cert_name
-    description: Certificate name
-    default: CACert
-    type_hint: text
-
 
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the PAN-OS NGFW. The xpath
 # determines where in the configuration hierarchy the xml fragment will be set. 'file' indicates the name of the file
