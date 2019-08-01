@@ -1,0 +1,52 @@
+name: python3_env_input_example
+# label used for menu selection
+label: Example Python Script Argument Parsing
+
+description: |
+  This skillet demonstrates a simple Python script in action with Env based input arguments and list handling
+
+# type of skillet (panos or panorama or template or terraform)
+type: python3
+
+# Labels allow grouping and type specific options and are generally only used in advanced cases
+labels:
+  collection:
+    - Example Skillets
+
+# variables define the things an operator may customize in this skillet. Things like DNS servers, NTP addresses, etc
+# may be customized for each deployment. Each variable will be rendered as a form field in the panhandler application
+variables:
+  - name: USERNAME
+    description: Username
+    default: admin
+    type_hint: text
+  - name: PASSWORD
+    description: Password
+    default:
+    type_hint: password
+  - name: SECRET
+    description: Secret
+    default:
+    type_hint: password
+  - name: WISHLIST
+    description: Wish list
+    default:
+    type_hint: checkbox
+    cbx_list:
+      - key: Item 1
+        value: item1
+      - key: Item 2
+        value: item2
+      - key: Item 3
+        value: item3
+      - key: Item 4
+        value: item4
+
+
+
+
+
+snippets:
+  - name: script
+    file: input_from_env.py
+    input_type: env
