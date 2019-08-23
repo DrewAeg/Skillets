@@ -5,3 +5,9 @@ Uptime is {{ uptime }}
 Software Version is {{ sw_version }}
 
 Selected Interface is {{ selected_interface }}
+
+{% for i in checkbox_interface %}
+    Found selected interface {{ i }}
+{% endfor %}
+
+Radio Interface was {{ radio_interface }}

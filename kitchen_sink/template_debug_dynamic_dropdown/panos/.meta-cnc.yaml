@@ -37,7 +37,16 @@ variables:
     default: not-saved
     type_hint: dropdown
     source: interface_names
-
+  - name: radio_interface
+    description: Interface By Radio
+    default: not-saved
+    type_hint: radio
+    source: interface_names
+  - name: checkbox_interface
+    description: Interface by Checkbox
+    default: not-saved
+    type_hint: checkbox
+    source: interface_names
 
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the PAN-OS NGFW. The xpath
 # determines where in the configuration hierarchy the xml fragment will be set. 'file' indicates the name of the file
