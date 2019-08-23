@@ -1,6 +1,6 @@
-name: generate_api_key
+name: generate_api_key_custom
 # label used for menu selection
-label: Generate PAN-OS API Key
+label: Generate PAN-OS API Key With Inputs Test
 
 description: |
   This skillet demonstrates a simple REST api call to a PAN-OS NGFW to generate a new API Key
