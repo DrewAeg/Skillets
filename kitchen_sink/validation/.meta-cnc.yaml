@@ -36,7 +36,7 @@ snippets:
   - name: update_schedule_threats_configured
     when: update_schedule_object is not none
     label: Ensure Threats is enabled
-    test: update_schedule_object| has_config('threats.recurring.weekly')
+    test: update_schedule_object| has_config('update-schedule.threats.recurring.weekly')
     documentation_link: https://docs.paloaltonetworks.com/pan-os/8-0/pan-os-new-features/content-inspection-features/telemetry-and-threat-intelligence-sharing
 
   - name: parse_test
