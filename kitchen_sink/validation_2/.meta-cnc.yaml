@@ -110,8 +110,8 @@ snippets:
     label: configure primary and secondary dns servers
     test: |
       (
-      dns_servers | has_config('primary')
-      and dns_servers | has_config('secondary')
+      dns_servers | has_config('servers.primary')
+      and dns_servers | has_config('servers.secondary')
       )
     documentation_link: https://iron-skillet.readthedocs.io/en/docs_master/overview.html
     severity: medium
