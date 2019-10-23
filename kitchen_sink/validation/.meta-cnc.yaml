@@ -51,7 +51,7 @@ snippets:
     variable: config
     outputs:
       - name: device_system
-        capture_object: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+        capture_object: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system/ip-address
 
   - name: ensure_wildfire_check_1_min
     when: update_schedule_object is not none
