@@ -64,7 +64,7 @@ snippets:
     label: enable all telemetry attributes
     test: |
       (
-      telemetry['statistics-service']['application-reports'] == 'yes'
+      telemetry | node_value('telement.statistics-service.application-reports') == 'yes'
       and telemetry['statistics-service']['threat-prevention-reports'] == 'yes'
       and telemetry['statistics-service']['passive-dns-monitoring'] == 'yes'
       and telemetry['statistics-service']['threat-prevention-pcap'] == 'yes'
@@ -80,7 +80,7 @@ snippets:
 
   - name: ensure_threats_check_30_min
     label: Ensure Threats Checks every 30 minutes
-    test: threats_update['recurring'] | has_config('every-30-mins')
+    test: threats_update | node_present('threats.recurring.weekly')
     documentation_link: https://iron-skillet.readthedocs.io/en/docs_master/overview.html
     severity: medium
     cmd: validate

@@ -30,23 +30,28 @@ snippets:
   - name: update_schedule_stats_service_configured
     when: update_schedule_object is not none
     label: Ensure Statistics Service is enabled
-    test: update_schedule_object| has_config('update-schedule.statistics-service')
+    test: update_schedule_object| node_present('update-schedule.statistics-service')
     documentation_link: https://docs.paloaltonetworks.com/pan-os/8-0/pan-os-new-features/content-inspection-features/telemetry-and-threat-intelligence-sharing
 
   - name: update_schedule_threats_configured
     when: update_schedule_object is not none
     label: Ensure Threats is enabled
-    test: update_schedule_object| has_config('update-schedule.threats.recurring.weekly')
+    test: update_schedule_object| node_present('threats.recurring.weekly')
+    documentation_link: https://docs.paloaltonetworks.com/pan-os/8-0/pan-os-new-features/content-inspection-features/telemetry-and-threat-intelligence-sharing
+
+  - name: update_schedule_threats_configured_alternate
+    when: update_schedule_object is not none
+    label: Ensure Threats is enabled alternate syntax
+    test: update_schedule_object| node_present('update-schedule.threats.recurring.weekly')
     documentation_link: https://docs.paloaltonetworks.com/pan-os/8-0/pan-os-new-features/content-inspection-features/telemetry-and-threat-intelligence-sharing
 
   - name: parse_test
-    label: Capturing Specific Values
-    when: update_schedule_object is not none
+    label: Capturing System Values
     cmd: parse
     variable: config
     outputs:
-      - name: ip_address
-        capture_value: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system/ip-address
+      - name: device_system
+        capture_object: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
 
   - name: ensure_wildfire_check_1_min
     when: update_schedule_object is not none
@@ -55,9 +60,30 @@ snippets:
     documentation_link: https://docs.paloaltonetworks.com/pan-os/8-0/pan-os-new-features/content-inspection-features/telemetry-and-threat-intelligence-sharing
 
   - name: ensure_ip_address
-    when: ip_address is not none
     label: Ensure IP Address is configured
-    test: ip_address == '10.10.10.10'
+    test: device_system | node_value('ip-address') == '10.10.10.10'
+    severity: high
+    documentation_link: https://docs.paloaltonetworks.com/pan-os/8-0/pan-os-new-features/content-inspection-features/telemetry-and-threat-intelligence-sharing
+
+  - name: parse_test_2
+    label: Capturing Profile Values
+    cmd: parse
+    variable: config
+    outputs:
+      - name: network_profiles
+        capture_object: /config/devices/entry[@name='localhost.localdomain']/network/profiles/monitor-profile
+
+  - name: check_profile_exists
+    when: network_profiles is not none
+    label: Ensure Named profile exists
+    test: network_profiles | node_attribute_present('entry', 'name', 'default')
+    severity: high
+    documentation_link: https://docs.paloaltonetworks.com/pan-os/8-0/pan-os-new-features/content-inspection-features/telemetry-and-threat-intelligence-sharing
+
+  - name: check_profile_exists_negative
+    when: network_profiles is not none
+    label: Ensure Bogus Named profile exists
+    test: network_profiles | node_attribute_present('entry', 'name', 'nowayjose')
     severity: high
     documentation_link: https://docs.paloaltonetworks.com/pan-os/8-0/pan-os-new-features/content-inspection-features/telemetry-and-threat-intelligence-sharing
 
