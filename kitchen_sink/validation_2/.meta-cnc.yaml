@@ -51,7 +51,7 @@ snippets:
   - name: security_rules_outbound_edl
     label: check for IronSkillet outbound EDL block rule member
     test: ('panw-bulletproof-ip-list' in security_rule_outbound_edl | node_value('destination.member'))
-    documentation_link: https://iron-skillet.readthedocs.io/en/docs_master/overview.html#what-is-next-after-loading-a-template
+    documentation_link: https://ironscotch.readthedocs.io/en/docs_dev/viz_guide_panos.html#device-setup-telemetry-telemetry
 
   - name: zone_protect_profile
     label: create and use recommended zone protection
