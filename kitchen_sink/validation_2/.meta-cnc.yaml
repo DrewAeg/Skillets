@@ -45,6 +45,13 @@ snippets:
         capture_object: /config/mgt-config/password-complexity
       - name: zone_protect_profile
         capture_object: /config/devices/entry[@name='localhost.localdomain']/network/profiles/zone-protection-profile
+      - name: security_rule_outbound_edl
+        capture_object: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules/entry[@name='Outbound Block Rule']
+
+  - name: security_rules_outbound_edl
+    label: check for IronSkillet outbound EDL block rule member
+    test: ('panw-bulletproof-ip-list' in security_rule_outbound_edl | node_value('destination.member'))
+    documentation_link: https://iron-skillet.readthedocs.io/en/docs_master/overview.html#what-is-next-after-loading-a-template
 
   - name: zone_protect_profile
     label: create and use recommended zone protection

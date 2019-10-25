@@ -28,7 +28,9 @@ snippets:
     xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
     file: device_system.xml
     cherry_pick: update-schedule
-    when: update_schedule_object is none
+    when: update_schedule_object  | should_remediate
+    fail_action: fail
+    fail_message:
   - name: configure_stats_service
     xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
     file: device_system.xml
