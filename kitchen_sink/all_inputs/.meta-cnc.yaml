@@ -44,7 +44,13 @@ variables:
     description: Float Test
     default: 1.1
     type_hint: float
-
+  - name: number_test
+    description: Number Test
+    default: 100
+    type_hint: number
+    attributes:
+      min: 50
+      max: 500
 
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the PAN-OS NGFW. The xpath
 # determines where in the configuration hierarchy the xml fragment will be set. 'file' indicates the name of the file
