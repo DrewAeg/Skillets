@@ -1,0 +1,55 @@
+name: all_inputs_testing_725D7C6A-FC3B-4B9E-BBCB-EC5FDA94C4CE
+label: All Inputs Testing
+
+description: |
+  Test for all input types
+
+type: template
+
+# Labels allow grouping and type specific options and are generally only used in advanced cases
+labels:
+  collection: Experimental Skillets
+
+# variables define the things an operator may customize in this skillet. Things like DNS servers, NTP addresses, etc
+# may be customized for each deployment. Each variable will be rendered as a form field in the panhandler application
+variables:
+  - name: hostname
+    description: Hostname
+    default: not-saved
+    type_hint: text
+  - name: uptime
+    description: Uptime
+    default: not-saved
+    type_hint: text
+  - name: sw_version
+    description: Software Version
+    default: not-saved
+    type_hint: text
+  - name: selected_interface
+    description: Interface
+    default: not-saved
+    type_hint: dropdown
+    source: interface_names
+  - name: radio_interface
+    description: Interface By Radio
+    default: not-saved
+    type_hint: radio
+    source: interface_names
+  - name: checkbox_interface
+    description: Interface by Checkbox
+    default: not-saved
+    type_hint: checkbox
+    source: interface_names
+  - name: float_test
+    description: Float Test
+    default: 1.1
+    type_hint: float
+
+
+# Snippets is an ordered list of configuration xml fragments that will be pushed to the PAN-OS NGFW. The xpath
+# determines where in the configuration hierarchy the xml fragment will be set. 'file' indicates the name of the file
+# to load and parse. Jinja2 style variables will be variable interpolated using the values of the 'variables' defined
+# in the 'variables' section.
+snippets:
+  - name: debug_output
+    file: output.j2
