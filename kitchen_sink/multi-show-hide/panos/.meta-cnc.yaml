@@ -32,10 +32,31 @@ variables:
     toggle_hint:
       source: bgp_type
       value: disable
+  - name: bgp_asn_1234
+    description: Only Enabled number 2
+    default: 64002
+    type_hint: text
+    toggle_hint:
+      source: bgp_type
+      value: enable
   - name: bgp_asn_3
     description: Always
     default: 64000
     type_hint: text
+  - name: bgp_asn_1234345
+    description: Only Enabled number 3
+    default: 64003
+    type_hint: text
+    toggle_hint:
+      source: bgp_type
+      value: enable
+  - name: bgp_asn_2
+    description: Only Disabled once more
+    default: 64007
+    type_hint: text
+    toggle_hint:
+      source: bgp_type
+      value: disable
 
 snippets:
   - name: check_hostname
