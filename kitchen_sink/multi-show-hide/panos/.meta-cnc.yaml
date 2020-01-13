@@ -23,15 +23,15 @@ variables:
     default: 64000
     type_hint: text
     toggle_hint:
-      - source: bgp_type
-        value: enable
+      source: bgp_type
+      value: enable
   - name: bgp_asn_2
     description: ASN 2
     default: 64000
     type_hint: text
     toggle_hint:
-      - source: bgp_type
-        value: disable
+      source: bgp_type
+      value: disable
   - name: bgp_asn_3
     description: ASN 3
     default: 64000
