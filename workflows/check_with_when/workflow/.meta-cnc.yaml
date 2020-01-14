@@ -1,6 +1,6 @@
-name: workflow_test_capture_multi
-label: Workflow Test With Multi Lists
-description: Another Simple test of the workflow system
+name: workflow_test_capture_multi_again
+label: Workflow Test With When Conditionals
+description: Another Simple test of the workflow system using When conditionals
 type: workflow
 labels:
   collection:
