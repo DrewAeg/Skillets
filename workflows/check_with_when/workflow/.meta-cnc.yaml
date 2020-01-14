@@ -36,6 +36,6 @@ variables:
 snippets:
   - name: output_capture_examples_812E106E-EF84-48CC-A2CB-96F9D7DA7295
   - name: output_01_9CB5BB58-A2CA-4E45-A561-3738D9E8497B
-    when: 'load_updates' in extra_options
+    when: "'load_updates' in extra_options"
   - name: output_02_573DC4B5-085D-4616-B9BA-0A10B8B4745D
-    when: 'rollback' in extra_options
+    when: "'rollback' in extra_options"
