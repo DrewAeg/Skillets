@@ -1,0 +1,16 @@
+Hostname is {{ hostname }}
+
+Uptime is {{ uptime }}
+
+Software Version is {{ sw_version }}
+
+Selected Profile is {{ selected_profile_group }}
+
+{% for i in checkbox_interface %}
+    Found selected interface {{ i }}
+{% endfor %}
+
+Radio Interface was {{ radio_interface }}
+
+all interfaces found are:
+{{ interface_names }}
