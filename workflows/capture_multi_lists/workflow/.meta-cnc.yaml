@@ -25,5 +25,5 @@ variables:
     type_hint: password
 
 snippets:
-  - name: output_capture_examples_5FC6B908-9F44-4CEE-829B-72F2B8B11D27
+  - name: output_capture_examples_812E106E-EF84-48CC-A2CB-96F9D7DA7295
   - name: dynamic_dropdown_again_198CEDE9-8D46-4740-919A-624CE044A13B
