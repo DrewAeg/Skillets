@@ -25,7 +25,7 @@ variables:
     type_hint: password
   - name: extra_options
     description: What actions should we take
-    default: []
+    default: ['load_updates']
     type_hint: checkbox
     cbx_list:
       - key: Load Updates
