@@ -26,5 +26,4 @@ variables:
 
 snippets:
   - name: output_capture_examples_5FC6B908-9F44-4CEE-829B-72F2B8B11D27
-  - name: get_interfaces_9F611B9D-7E92-4497-9208-8B6233ED64FC
-  - name: dynamic_dropdown_debug_57C881DA-6D72-4A26-9099-B64AEFF8161C
+  - name: dynamic_dropdown_again_3299DE05-78E5-498B-A959-B07FC78594D
