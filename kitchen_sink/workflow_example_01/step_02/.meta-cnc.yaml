@@ -24,7 +24,7 @@ variables:
     description: Host
     default: 127.0.0.1
     type_hint: hidden
-  - name: interface_name
+  - name: interface_names
     description: Interface Names
     default: 127.0.0.1
     type_hint: hidden
