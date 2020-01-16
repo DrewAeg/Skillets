@@ -24,6 +24,10 @@ variables:
     description: Host
     default: 127.0.0.1
     type_hint: fqdn_or_ip
+  - name: TARGET_PORT
+    description: Port
+    default: 443
+    type_hint: number
   - name: TARGET_USERNAME
     description: Username
     default: admin
