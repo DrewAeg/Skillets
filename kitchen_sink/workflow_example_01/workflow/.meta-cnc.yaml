@@ -39,8 +39,7 @@ variables:
 # in the 'variables' section.
 snippets:
   - name: get_interfaces_in_workflow
-  - name: get_system_info
-  - name: get_system_info_debug
+  - name: workflow_02_template
 
 
 
