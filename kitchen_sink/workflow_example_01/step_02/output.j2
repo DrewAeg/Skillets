@@ -9,7 +9,7 @@ Here are all the interfaces found on {{ TARGET_IP }}
 
 {% endfor %}
 
-{% if interface_ips | defined %}
+{% if interface_ips | default({}, false) %}
 And here are all your IP addresses you've entered:
 
 {% for name, ip in interface_ips.items() %}
