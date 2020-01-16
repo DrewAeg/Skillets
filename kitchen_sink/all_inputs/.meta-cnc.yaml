@@ -30,6 +30,11 @@ variables:
     default: not-saved
     type_hint: dropdown
     source: interface_names
+  - name: interface_ips
+    description: Interface IP Address For
+    default: 10.10.10.10
+    type_hint: text
+    source: interface_names
   - name: radio_interface
     description: Interface By Radio
     default: not-saved
