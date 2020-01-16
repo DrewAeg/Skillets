@@ -9,7 +9,7 @@ Here are all the interfaces found on {{ TARGET_IP }}
 
 {% endfor %}
 
-{% if interface_ips | default({}, false) %}
+{% if interface_ips | default(false, false) %}
 And here are all your IP addresses you've entered:
 
 {% for name, ip in interface_ips.items() %}
@@ -22,7 +22,7 @@ And here are all your IP addresses you've entered:
 
 ANO NOW CHECK LENGTH
 
-{% if interface_ips | length > 0 %}
+{% if interface_ips | default({}) | length > 0 %}
 And here are all your IP addresses you've entered:
 
 {% for name, ip in interface_ips.items() %}
@@ -30,5 +30,9 @@ And here are all your IP addresses you've entered:
     {{ name }} was configured to have an IP Address of: {{ ip }}
 
 {% endfor %}
+
+{% else %}
+
+NO INTERFACE IPS WERE FOUND
 
 {% endif %}
