@@ -24,6 +24,9 @@ variables:
     description: API Key
     default: abc123
     type_hint: text
+  - name: TARGET_IP
+    description: target ip
+    type_hint: hidden
 
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the PAN-OS NGFW. The xpath
 # determines where in the configuration hierarchy the xml fragment will be set. 'file' indicates the name of the file
