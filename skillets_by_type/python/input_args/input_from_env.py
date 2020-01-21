@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 #
 # This example uses ENV variables to gather input from the user
-# The .meta-cnc file defines 3 input variables:
-# USERNAME, PASSWORD, SECRET
+# The .meta-cnc file defines 4 input variables:
+# USERNAME, PASSWORD, SECRET, WISHLIST
 # This script shows how to obtain the values entered from the user
 #
 import os
@@ -11,8 +11,6 @@ print('*'*80)
 print('This is an example python script. All stdout will be returned to the user')
 print('\n')
 print('The user has entered 3 values from the Panhandler UI')
-
-# each variable will be present in the environ dict on the 'os' module
 
 # this example uses the 'get' method to ensure we get the 'default' value in case it doesn't exist
 username = os.environ.get('USERNAME', 'default')
