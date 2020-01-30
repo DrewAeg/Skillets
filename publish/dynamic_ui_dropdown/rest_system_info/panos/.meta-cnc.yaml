@@ -14,7 +14,7 @@ variables:
   - name: api_key
     description: API Key
     default: abc123
-    type_hint: text
+    type_hint: hidden
   - name: TARGET_IP
     description: target ip
     type_hint: hidden

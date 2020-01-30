@@ -17,19 +17,19 @@ variables:
   - name: TARGET_IP
     description: Host
     default: 127.0.0.1
-    type_hint: fqdn_or_ip
+    type_hint: hidden
   - name: TARGET_PORT
     description: Port
     default: 443
-    type_hint: number
+    type_hint: hidden
   - name: TARGET_USERNAME
     description: Username
     default: admin
-    type_hint: text
+    type_hint: hidden
   - name: TARGET_PASSWORD
     description: Password
     default: admin
-    type_hint: password
+    type_hint: hidden
 
 
 snippets:
