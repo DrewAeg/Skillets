@@ -26,14 +26,14 @@ variables:
     default: 64000
     type_hint: text
     toggle_hint:
-      source: bgp_type
+      source: use_bgp
       value: enable
   - name: iso
     description: IS-IS
     default: 49.0001.00a0.c96b.c490.00
     type_hint: text
     toggle_hint:
-      source: bgp_type
+      source: use_bgp
       value: disable
 
 snippets:
