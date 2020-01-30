@@ -22,7 +22,7 @@ variables:
       - key: Disable
         value: disable
   - name: bgp_asn
-    description: Only Enabled
+    description: BGP ASN
     default: 64000
     type_hint: text
     toggle_hint:
