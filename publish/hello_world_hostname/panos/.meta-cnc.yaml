@@ -22,8 +22,8 @@ variables:
 
 snippets:
   - name: check_hostname
-    cmd: op
-    cmd_str: <show><system><info></info></system></show>
+    cmd: cli
+    cmd_str: show system info
     outputs:
       - name: hostname
         capture_pattern: result/system/hostname

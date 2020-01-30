@@ -39,3 +39,4 @@ variables:
 snippets:
   - name: debug_output
     file: output.j2
+    template_title: BGP Selection Output
