@@ -1,5 +1,5 @@
 name: dynamic_ui_example-42CB-45DB-92E9-AD0753E44DE0
-label: Dynamic UI Example
+label: Template - Dynamic UI Example
 
 description: |
   This skillet demonstrates how to use captured variabes to dynamically populate input controls.

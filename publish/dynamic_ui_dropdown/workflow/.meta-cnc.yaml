@@ -1,6 +1,6 @@
 name: dynamic_workflow_example_A7025A43-9BA1-4EA4-B600-A150F1634C63
 
-label: Dynamic Workflow Example
+label: Dynamic UI Example 01
 
 description: |
   This skillet demonstrates a simple workflow to collect data from a PAN-OS NGFW then uses that data to pre-populate

@@ -1,6 +1,6 @@
 name: get_system_info_ACF249B2-D9B6-4062-8883-2A6BF7450C3A
 
-label: Get PAN-OS System Information
+label: Get PAN-OS System Information via REST
 
 description: |
   This skillet demonstrates a simple REST api call to a PAN-OS NGFW to gather it's system information

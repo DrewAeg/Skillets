@@ -1,6 +1,6 @@
 name: dynamic_ui_exmample_5B305F98-CF05-4932-8C3E-3F7AAEAA9551
 
-label: Dynamic UI With Show Hide Field
+label: Dynamic UI Example 03
 
 description: |
   This skillet demonstrates how to toggle the visibility of variables. It also shows how to only push a configuration

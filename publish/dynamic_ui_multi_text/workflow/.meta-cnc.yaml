@@ -1,7 +1,7 @@
 name: dynamic_ui_text_with_source_E7D18395-B2FB-443B-BBE5-59E621243D5C
 
 # label used for menu selection
-label: Simple Workflow with to show Dynamic UI elements.
+label: Dynamic UI Example 02
 
 description: |
   This skillet demonstrates a simple workflow to collect data from a PAN-OS NGFW then displays that information in a

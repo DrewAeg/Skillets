@@ -1,6 +1,6 @@
 name: get_interfaces_94207658-8EAF-4893-ACB2-A3315657C9E5
 
-label: List PAN-OS Logical interfaces
+label: List PAN-OS Logical interfaces via REST
 
 description: |
   This skillet demonstrates a simple REST api call to a PAN-OS NGFW to gather logical interfaces
