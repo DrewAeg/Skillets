@@ -60,8 +60,8 @@ variables:
     description: hidden_list_Test
     default: [1, 2, 4]
     type_hint: hidden
-  - name: list_test
-    description: hidden_list_Test
+  - name: list_test_2
+    description: Another List
     default: [1, 2, 4]
     type_hint: list
 
