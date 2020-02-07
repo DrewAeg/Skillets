@@ -17,9 +17,16 @@ float test was {{ float_test }}
 number test was {{ number_test }}
 
 
-list test is {{ list_test }}
+Hidden list test is {{ list_test }}
 
 {% for i in list_test %}
     here is: {{ i }}
 
-   {% endfor %}
+{% endfor %}
+
+Visible list test is {{ list_test_2 }}
+
+{% for i in list_test_2 %}
+    here is: {{ i }}
+
+{% endfor %}
