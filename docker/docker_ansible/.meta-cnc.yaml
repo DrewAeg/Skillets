@@ -29,4 +29,4 @@ variables:
 snippets:
   - name: ansible_test
     image: paloaltonetworks/pantools
-    cmd: ansible -i '{{ ip_address | join(', ') }}' op_cmd_example.yml -e 'ip_address={{ ip_address }}' -e 'username={{ username }}' -e 'cli={{ cli }}' -e 'password={{ password }}'
+    cmd: ansible-playbook -i '{{ ip_address | join(', ') }}' op_cmd_example.yml -e 'ip_address={{ ip_address }}' -e 'username={{ username }}' -e 'cli={{ cli }}' -e 'password={{ password }}'
