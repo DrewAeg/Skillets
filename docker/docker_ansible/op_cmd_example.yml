@@ -10,12 +10,11 @@
   - name: Show all interfaces using ('show interface all')
     panos_op:
       provider:
-        ip_address: '{{ item }}'
+        ip_address: '{{ ip_address }}'
         username: '{{ username }}'
         password: '{{ password }}'
       cmd: '{{ cli }}'
     register: result
-    with_items: '{{ ip_address | from_json }}'
 
   - name: returned output in the default JSON format
     debug: msg='{{ result.stdout }}'
