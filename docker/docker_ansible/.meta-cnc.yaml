@@ -14,7 +14,7 @@ variables:
   - name: username
     description: Host Username
     default: admin
-    type_hint: ip_address
+    type_hint: text
   - name: password
     description: Host Password
     default:
