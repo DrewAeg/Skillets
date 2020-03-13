@@ -9,11 +9,12 @@
   tasks:
   - name: Show all interfaces using ('show interface all')
     panos_op:
-      ip_address: '{{ ip_address }}'
-      password: '{{ password }}'
+      ip_address: '{{ item }}'
       username: '{{ username }}'
+      password: '{{ password }}'
       cmd: '{{ cli }}'
     register: result
+    loop: '{{ ip_address }}'
 
   - name: returned output in the default JSON format
     debug: msg='{{ result.stdout }}'
