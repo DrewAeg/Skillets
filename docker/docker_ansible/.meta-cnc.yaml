@@ -10,7 +10,7 @@ variables:
   - name: ip_address
     description: Host IP Address
     default: 10.0.0.1
-    type_hint: ip_address
+    type_hint: list
   - name: username
     description: Host Username
     default: admin
@@ -19,10 +19,14 @@ variables:
     description: Host Password
     default:
     type_hint: password
+  - name: cli
+    description: cli command
+    default: show system info
+    type_hint: text
 
 # snippets used for api configuration including xpath and element as file name
 # files will load in the order listed
 snippets:
   - name: ansible_test
     image: paloaltonetworks/pantools
-    cmd: ansible -i '{{ ip_address }}, ' op_cmd_example.yml -e 'ip_address={{ FW_USER }}' -e 'username={{ username }}' -e 'password={{ password }}'
+    cmd: ansible -i '{{ ip_address | join(',') }}' op_cmd_example.yml -e 'ip_address={{ FW_USER }}' -e 'username={{ username }}' -e 'password={{ password }}'
