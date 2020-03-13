@@ -7,14 +7,22 @@ labels:
   collection: experimental
 
 variables:
-  - name: FW_IP
+  - name: ip_address
     description: Host IP Address
     default: 10.0.0.1
     type_hint: ip_address
+  - name: username
+    description: Host Username
+    default: admin
+    type_hint: ip_address
+  - name: password
+    description: Host Password
+    default:
+    type_hint: password
 
 # snippets used for api configuration including xpath and element as file name
 # files will load in the order listed
 snippets:
   - name: ansible_test
     image: paloaltonetworks/pantools
-    cmd: ansible -i '{{ FW_IP }}' -m ping all
+    cmd: ansible -i '{{ ip_address }}, ' op_cmd_example.yml -e 'ip_address={{ FW_USER }}' -e 'username={{ username }}' -e 'password={{ password }}'
