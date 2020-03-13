@@ -1,6 +1,7 @@
 name: docker_test_0-000002
 label: 000.1 docker test
 description: docker test
+
 type: docker
 extends:
 
@@ -17,5 +18,5 @@ variables:
 # files will load in the order listed
 snippets:
   - name: terraform_test
-    image: "hashicorp/terraform:0.11.13"
+    image: "hashicorp/terraform:0.12.23"
     cmd: terraform --version
