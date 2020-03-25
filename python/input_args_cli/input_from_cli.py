@@ -31,7 +31,7 @@ def main():
     username = args.username
     password = args.password
     secret = args.secret
-    wishlist = args.secret
+    wishlist = args.wishlist
 
     print(f'The entered username is: {username}')
     print(f'The entered secret has a length of {len(secret)}')
