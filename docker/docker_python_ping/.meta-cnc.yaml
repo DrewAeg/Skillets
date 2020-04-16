@@ -1,0 +1,21 @@
+name: python_ping_test
+label: Docker Python Example with Custom Image
+description: An example docker skillet that executes a python script found in the same directory using a custom image
+
+type: docker
+
+labels:
+  collection: Example Skillets
+
+variables:
+  - name: url
+    description: URLs to Ping
+    default: www.paloaltonetworks.com
+    type_hint: list
+
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+snippets:
+  - name: python_test
+    image: nembery/url_ping
+    cmd: python3 ./url_ping.py
