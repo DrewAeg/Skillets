@@ -8,6 +8,18 @@ your python tooling as a docker image.
 This example uses the standard alpine linux Python image to execute the script found in this directory. More 
 interesting examples could use a custom docker image with all the requirements, libraries, and tools pre-installed.
 
+## Custom Docker image
+
+This example uses a special docker image. To build it run this:
+
+```bash
+
+docker build . -t nembery/url_ping
+
+```
+
+> Feel free to change the image name and tag and also change them in the meta-cnc file
+
 ## Example Script
 
 There is also an example python script that shows how to use 
