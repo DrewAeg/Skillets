@@ -1,8 +1,13 @@
 import click
 from pythonping import ping
+import os
+
+
 @click.command()
 @click.option("-url", "--url", help="url list to ping", type=str,
-              default="use text file")
+              default=lambda: os.environ.get('url', ''))
+
+
 def cli(url):
     """
     process a list of URLs and get ping results
