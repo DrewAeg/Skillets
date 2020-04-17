@@ -1,10 +1,10 @@
-name: python3_cli_input_example_986AB95B-B184-4D72-BBA1-2390A2042779
+name: python3_no_output
 
 # label used for menu selection
 label: 'Example Python Script #2'
 
 description: |
-  This skillet demonstrates a simple Python script that requires CLI arguments
+  This skillet demonstrates a simple Python script that has not return for debugging
 
 # type of skillet (panos or panorama or template or terraform)
 type: python3
