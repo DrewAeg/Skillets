@@ -48,3 +48,7 @@ snippets:
   - name: script
     file: input_from_cli.py
     input_type: cli
+    output_type: json
+    outputs:
+      - name: test_out
+        capture_pattern: .
