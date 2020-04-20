@@ -38,6 +38,29 @@ variables:
       source: simple_dropdown
       value: disable
 
+  - name: radio_entry_toggle
+    description: Radio Entry That toggles
+    default: maybe
+    type_hint: radio
+    toggle_hint:
+      source: simple_dropdown
+      value: disable
+    rad_list:
+      - key: 'Yes'
+        value: 'yes'
+      - key: 'No'
+        value: 'no'
+      - key: 'Maybe'
+        value: 'maybe'
+
+  - name: simple_list_toggle
+    description: List Values with Toggle
+    default: ['one', 'two', 'three']
+    type_hint: list
+    toggle_hint:
+      source: simple_dropdown
+      value: disable
+
   - name: simple_list
     description: List Values
     default: ['one', 'two', 'three']
