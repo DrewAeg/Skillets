@@ -20,6 +20,7 @@ labels:
   collection:
     - Example Skillets
     - Validation
+  output_template: validation_output.j2
 
 variables:
   - name: SOME_VARIABLE
