@@ -1,0 +1,23 @@
+This file will be rendered as part of the skillet execution.
+
+You have access to all the captured outputs, as well as the context used
+during processing.
+
+Here is the CLI output as returned from the PAN-OS API:
+
+{{ cli_output }}
+
+
+And here is the saw output after it was converted into an object:
+
+{{ cli_output_as_object }}
+
+The command used to generate this output was: {{ context.cli_command }}
+
+Here are all the variables found in the context during execution:
+
+{% for k, v in context.items() %}
+    {% if k != 'config' %}
+    {{ k }} has a value of {{ v }}
+    {% endif %}
+{% endfor %}

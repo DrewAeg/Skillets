@@ -173,7 +173,10 @@ variables:
         value: 'maybe'
 
   - name: hidden_entry
-    description: This entry will be hidden but still present in the form
+    description: This entry will be hidden and not present in the form.
+    help_text: |
+      This is useful to pass variables to snippets without having them display on the form
+      to the user.
     default: I am hidden
     type_hint: hidden
 

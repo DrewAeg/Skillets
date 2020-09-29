@@ -41,4 +41,5 @@ variables:
 snippets:
   - name: script
     file: input_from_env.py
+    # input_type can be 'cli' or 'env'. In this case
     input_type: env
