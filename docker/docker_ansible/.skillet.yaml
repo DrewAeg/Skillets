@@ -1,6 +1,6 @@
 name: docker_ansible_test_001
 label: Docker Ansible Example
-description: An example docker skillet that executes an Ansible Playbookk found in this directory
+description: An example docker skillet that executes an Ansible Playbook found in this directory
 
 type: docker
 
@@ -27,8 +27,6 @@ variables:
 
 snippets:
   - name: ansible_test
-    image: registry.gitlab.com/panw-gse/as/panos_skillet_tools:dev
+    image: registry.gitlab.com/panw-gse/as/panos_skillet_tools:latest
     cmd: |
       ansible-playbook -i 'panorama-1,  ' op_cmd_example.yml
-      -e 'cli="{{ cli }}"'
-      -e '{"provider": {"ip_address": "{{ ip_address }}", "username": "{{ username }}", "password": "{{ password }}"}}'
