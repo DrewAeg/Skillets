@@ -1,13 +1,7 @@
-<<<<<<< HEAD:docker/docker_ansible/.meta-cnc.yaml
-name: ansible_test
-label: 000.3 docker test
-description: Ansible Ping Test
-=======
 name: docker_ansible_test_001
 label: Docker Ansible Example
 description: An example docker skillet that executes an Ansible Playbook found in this directory
 
->>>>>>> ansible_env:docker/docker_ansible/.skillet.yaml
 type: docker
 
 labels:
@@ -35,13 +29,7 @@ variables:
 # files will load in the order listed
 snippets:
   - name: ansible_test
-<<<<<<< HEAD:docker/docker_ansible/.meta-cnc.yaml
     image: paloaltonetworks/pantools
     cmd: |
       ansible-playbook -i 'panorama-1,  ' op_cmd_example.yml
       -e 'provider={"ip_address": "{{ ip_address }}", "username": "{{ username }}", "password": "{{ password }}"}'
-=======
-    image: registry.gitlab.com/panw-gse/as/panos_skillet_tools:latest
-    cmd: |
-      ansible-playbook -i 'panorama-1,  ' op_cmd_example.yml
->>>>>>> ansible_env:docker/docker_ansible/.skillet.yaml
