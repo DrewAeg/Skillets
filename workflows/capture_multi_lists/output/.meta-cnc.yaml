@@ -1,14 +1,22 @@
-name: all_inputs_testing_725D7C6A-FC3B-4B9E-BBCB-EC5FDA94C4CE
-label: All Inputs Testing
+name: dynamic_dropdown_again_198CEDE9-8D46-4740-919A-624CE044A13B
+
+# label used for menu selection
+label: Show captured List in dropdown
 
 description: |
-  Test for all input types
+  This skillet demonstrates a simple template to show captured list values
 
+# type of skillet (panos or panorama or template or terraform)
 type: template
+
+# more complex skillets may express a dependency on another skillet that should be loaded before this one.
+# For example, a set of skillets may build off of a single 'golden config' that contains shared configuration
+# As this skillet is very simple, there is no need to build on another one.
+extends:
 
 # Labels allow grouping and type specific options and are generally only used in advanced cases
 labels:
-  collection: Experimental Skillets
+  collection: Kitchen Sink
 
 # variables define the things an operator may customize in this skillet. Things like DNS servers, NTP addresses, etc
 # may be customized for each deployment. Each variable will be rendered as a form field in the panhandler application
@@ -25,47 +33,21 @@ variables:
     description: Software Version
     default: not-saved
     type_hint: text
-  - name: selected_interface
-    description: Interface
+  - name: selected_profile_group
+    description: Profile Group
     default: not-saved
     type_hint: dropdown
-    source: interface_names
-  - name: interface_ips
-    description: Interface IP Address For
-    default: 10.10.10.10
-    type_hint: text
-    source: interface_names
+    source: profile_groups
   - name: radio_interface
-    description: Interface By Radio
+    description: Only One Zone
     default: not-saved
     type_hint: radio
-    source: interface_names
+    source: all_zones
   - name: checkbox_interface
     description: Interface by Checkbox
     default: not-saved
     type_hint: checkbox
-    cbx_list:
-      - key: True
-        value: True
-  - name: float_test
-    description: Float Test
-    default: 1.1
-    type_hint: float
-  - name: number_test
-    description: Number Test
-    default: 100
-    type_hint: number
-    attributes:
-      min: 50
-      max: 500
-  - name: list_test
-    description: hidden_list_Test
-    default: [1, 2, 4]
-    type_hint: hidden
-  - name: list_test_2
-    description: Another List
-    default: [1, 2, 4]
-    type_hint: list
+    source: interface_names
 
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the PAN-OS NGFW. The xpath
 # determines where in the configuration hierarchy the xml fragment will be set. 'file' indicates the name of the file

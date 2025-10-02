@@ -1,0 +1,30 @@
+name: workflow_test_capture
+label: Workflow Test
+description: Simple test of the workflow system
+type: workflow
+labels:
+  collection:
+    - Example Skillets
+
+variables:
+  - name: TARGET_IP
+    description: Host
+    default: 0.0.0.0
+    type_hint: fqdn_or_ip
+  - name: TARGET_PORT
+    description: Port
+    default: 443
+    type_hint: number
+  - name: TARGET_USERNAME
+    description: Username
+    default: admin
+    type_hint: text
+  - name: TARGET_PASSWORD
+    description: Password
+    default: admin
+    type_hint: password
+
+snippets:
+  - name: generate_api_key_8EFB041C-B6B0-4FF1-BAD9-4ABC3BDD83E8
+  - name: get_interfaces_9F611B9D-7E92-4497-9208-8B6233ED64FC
+  - name: dynamic_dropdown_debug_57C881DA-6D72-4A26-9099-B64AEFF8161C

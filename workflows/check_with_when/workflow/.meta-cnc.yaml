@@ -1,0 +1,40 @@
+name: workflow_test_capture_multi_again
+label: Workflow Test With When Conditionals
+description: Another Simple test of the workflow system using When conditionals
+type: workflow
+labels:
+  collection:
+    - Example Skillets
+
+variables:
+  - name: TARGET_IP
+    description: Host
+    default: 0.0.0.0
+    type_hint: fqdn_or_ip
+  - name: TARGET_PORT
+    description: Port
+    default: 443
+    type_hint: number
+  - name: TARGET_USERNAME
+    description: Username
+    default: admin
+    type_hint: text
+  - name: TARGET_PASSWORD
+    description: Password
+    default: admin
+    type_hint: password
+  - name: extra_options
+    description: What actions should we take
+    default: ['load_updates']
+    type_hint: checkbox
+    cbx_list:
+      - key: Load Updates
+        value: load_updates
+      - key: Rollback Config
+        value: rollback
+
+snippets:
+  - name: output_01_9CB5BB58-A2CA-4E45-A561-3738D9E8497B
+    when: "'load_updates' in extra_options"
+  - name: output_02_573DC4B5-085D-4616-B9BA-0A10B8B4745D
+    when: "'rollback' in extra_options"

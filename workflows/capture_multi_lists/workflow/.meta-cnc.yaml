@@ -1,0 +1,29 @@
+name: workflow_test_capture_multi
+label: Workflow Test With Multi Lists
+description: Another Simple test of the workflow system
+type: workflow
+labels:
+  collection:
+    - Example Skillets
+
+variables:
+  - name: TARGET_IP
+    description: Host
+    default: 0.0.0.0
+    type_hint: fqdn_or_ip
+  - name: TARGET_PORT
+    description: Port
+    default: 443
+    type_hint: number
+  - name: TARGET_USERNAME
+    description: Username
+    default: admin
+    type_hint: text
+  - name: TARGET_PASSWORD
+    description: Password
+    default: admin
+    type_hint: password
+
+snippets:
+  - name: output_capture_examples_812E106E-EF84-48CC-A2CB-96F9D7DA7295
+  - name: dynamic_dropdown_again_198CEDE9-8D46-4740-919A-624CE044A13B

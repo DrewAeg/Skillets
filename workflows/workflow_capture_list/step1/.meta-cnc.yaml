@@ -1,0 +1,43 @@
+name: get_interfaces_9F611B9D-7E92-4497-9208-8B6233ED64FC
+# label used for menu selection
+label: List PAN-OS Logical interfaces
+
+description: |
+  This skillet demonstrates a simple REST api call to a PAN-OS NGFW to gather logical interfaces
+
+type: rest
+
+# Labels allow grouping and type specific options and are generally only used in advanced cases
+labels:
+  collection: Kitchen Sink
+
+# variables define the things an operator may customize in this skillet. Things like DNS servers, NTP addresses, etc
+# may be customized for each deployment. Each variable will be rendered as a form field in the panhandler application
+variables:
+  - name: api_key
+    description: API Key
+    default: abc123
+    type_hint: hidden
+  - name: TARGET_IP
+    description: Host
+    default: panos-01
+    type_hint: hidden
+
+snippets:
+  - name: interfaces
+    path: https://{{ TARGET_IP }}/api/?type=op&cmd=<show><interface>logical</interface></show>&key={{ api_key }}
+    output_type: xml
+    outputs:
+      - name: interface_names
+        capture_pattern: ./result/ifnet/entry/name
+  - name: system_info
+    path: https://{{ TARGET_IP }}/api/?type=op&cmd=<show><system><info></info></system></show>&key={{ api_key }}
+    output_type: xml
+    outputs:
+      - name: hostname
+        capture_pattern: result/system/hostname
+      - name: uptime
+        capture_pattern: result/system/uptime
+      - name: sw_version
+        capture_pattern: result/system/sw-version
+
