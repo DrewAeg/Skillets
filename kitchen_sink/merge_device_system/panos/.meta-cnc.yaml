@@ -1,0 +1,51 @@
+name: merge_device_system
+label: IronSkillet Audit Device System
+
+description: |
+  This Skillet checks the device system settings and sets the recommended values if they are not already
+  configured
+
+type: panos
+labels:
+  collection: Brownfield Skillets
+
+variables:
+  - name: FW_NAME
+    description: Firewall hostname
+    default: panos-01
+    type_hint: text
+
+snippets:
+
+  - name: show_device_system
+    cmd: show
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    outputs:
+      # capture all the xml elements found at the 'update-schedule' xpath and convert it into a python object
+      - name: update_schedule_object
+        capture_object: update-schedule
+  - name: configure_all_update_schedule
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    file: device_system.xml
+    cherry_pick: update-schedule
+    when: update_schedule_object  | should_remediate
+    fail_action: fail
+    fail_message:
+  - name: configure_stats_service
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    file: device_system.xml
+    cherry_pick: update-schedule/statistics-service
+    when: update_schedule_object is not none and 'statistics-service' not in update_schedule_object['update-schedule']
+  - name: configure_threats
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    file: device_system.xml
+    cherry_pick: update-schedule/threats
+    # when: update_schedule_object is not none and 'threats' not in update_schedule_object['update-schedule']
+    when: update_schedule_object|missing_config('threats')
+  - name: configure_anti_virus
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    file: device_system.xml
+    cherry_pick: update-schedule/anti-virus
+    # when: update_schedule_object is not none and 'anti-virus' not in update_schedule_object['update-schedule']
+    when: update_schedule_object|missing_config('anti-virus')
+
