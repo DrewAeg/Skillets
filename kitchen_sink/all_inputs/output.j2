@@ -1,0 +1,32 @@
+Hostname is {{ hostname }}
+
+Uptime is {{ uptime }}
+
+Software Version is {{ sw_version }}
+
+Selected Interface is {{ selected_interface }}
+
+{% for i in checkbox_interface %}
+    Found selected interface {{ i }}
+{% endfor %}
+
+Radio Interface was {{ radio_interface }}
+
+float test was {{ float_test }}
+
+number test was {{ number_test }}
+
+
+Hidden list test is {{ list_test }}
+
+{% for i in list_test %}
+    here is: {{ i }}
+
+{% endfor %}
+
+Visible list test is {{ list_test_2 }}
+
+{% for i in list_test_2 %}
+    here is: {{ i }}
+
+{% endfor %}
