@@ -3,8 +3,15 @@
   connection: local
   gather_facts: False
 
-  roles:
-    - role: PaloAltoNetworks.paloaltonetworks
+  collections:
+    - paloaltonetworks.panos
+
+  vars:
+    provider:
+      username: "{{ lookup('env', 'username') | default('admin', True) }}"
+      password: "{{ lookup('env', 'password') | default('admin', True) }}"
+      ip_address: "{{ lookup('env', 'ip_address') | default('10.10.10.10', True) }}"
+    cli: "{{ lookup('env', 'cli') | default('show system info', True) }}"
 
   tasks:
   - name: Show all interfaces using ('show interface all')
