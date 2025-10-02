@@ -1,0 +1,36 @@
+name: panos_cli_example
+
+label: PAN-OS CLI Example With output template
+
+description: |
+  This skillet demonstrates how to execute an arbitrary CLI command on a PAN-OS Device and capture it's outputs.
+  We can then show these outputs using a custom jinja rendered template using the 'output_template'
+  label.
+
+type: panos
+
+labels:
+  collection: Kitchen Sink
+  output_template: panos_cli_output.j2
+
+variables:
+  - name: cli_command
+    description: CLI Command
+    default: show system info
+    type_hint: hidden
+
+snippets:
+  - name: some_cli
+    cmd: cli
+    cmd_str: '{{ cli_command }}'
+    output_type: text
+    outputs:
+      - name: cli_output
+
+  - name: convert_output
+    cmd: parse
+    variable: cli_output
+    output_type: xml
+    outputs:
+      - name: cli_output_as_object
+        capture_object: .

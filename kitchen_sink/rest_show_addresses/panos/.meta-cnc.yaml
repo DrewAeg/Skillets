@@ -1,0 +1,32 @@
+name: get_addresses
+# label used for menu selection
+label: List PAN-OS Address Objects
+
+description: |
+  This skillet demonstrates a simple REST api call to a PAN-OS NGFW to gather Address Objects
+
+type: rest
+
+# Labels allow grouping and type specific options and are generally only used in advanced cases
+labels:
+  collection: Rest Skillets
+
+# variables define the things an operator may customize in this skillet. Things like DNS servers, NTP addresses, etc
+# may be customized for each deployment. Each variable will be rendered as a form field in the panhandler application
+variables:
+  - name: api_key
+    description: API Key
+    default: abc123
+    type_hint: text
+  - name: TARGET_IP
+    description: Host
+    default: panos-01
+    type_hint: fqdn_or_ip
+
+snippets:
+  - name: addresses
+    path: https://{{ TARGET_IP }}/restapi/9.0/Objects/Addresses?location=vsys&vsys=vsys1&key={{ api_key }}
+    output_type: json
+    outputs:
+      - name: addresses
+        capture_pattern: $.result.entry[*].'@name'

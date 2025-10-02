@@ -1,0 +1,35 @@
+name: docker_ansible_test_001
+label: Docker Ansible Example
+description: An example docker skillet that executes an Ansible Playbook found in this directory
+
+type: docker
+
+labels:
+  collection: experimental
+
+variables:
+  - name: ip_address
+    description: Host IP Address
+    default: 10.0.0.1
+    type_hint: ip_address
+  - name: username
+    description: Host Username
+    default: admin
+    type_hint: text
+  - name: password
+    description: Host Password
+    default:
+    type_hint: password
+  - name: cli
+    description: cli command
+    default: show system info
+    type_hint: text
+
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+snippets:
+  - name: ansible_test
+    image: paloaltonetworks/pantools
+    cmd: |
+      ansible-playbook -i 'panorama-1,  ' op_cmd_example.yml
+      -e 'provider={"ip_address": "{{ ip_address }}", "username": "{{ username }}", "password": "{{ password }}"}'

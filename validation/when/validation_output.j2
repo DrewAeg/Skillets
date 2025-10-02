@@ -1,0 +1,14 @@
+<div class="p-3">
+<table>
+  <th>Label</th>
+  <th>Result</th>
+  <th>Severity</th>
+{% for k, r in pan_validation.items() %}
+  <tr>
+    <td>{{ r.label }}</td>
+    <td>{{ r.results }}</td>
+    <td>{{ r.severity }}</td>
+  </tr>
+{% endfor %}
+</table>
+</div>

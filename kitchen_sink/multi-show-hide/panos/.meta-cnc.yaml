@@ -1,0 +1,71 @@
+name: dynamic_ui_exmample
+label: Dynamic UI Example
+
+description: |
+  This skillet demonstrates how to toggle the visibility of variables
+
+type: panos
+labels:
+  collection: Example Skillets
+
+variables:
+  - name: bgp_type
+    description: Use BGP
+    default: enable
+    type_hint: dropdown
+    dd_list:
+      - key: Enable
+        value: enable
+      - key: Disable
+        value: disable
+  - name: bgp_asn
+    description: Only Enabled
+    default: 64000
+    type_hint: text
+    toggle_hint:
+      source: bgp_type
+      value: enable
+  - name: bgp_asn_2
+    description: Only Disabled
+    default: 64000
+    type_hint: text
+    toggle_hint:
+      source: bgp_type
+      value: disable
+  - name: bgp_asn_1234
+    description: Only Enabled number 2
+    default: 64002
+    type_hint: text
+    toggle_hint:
+      source: bgp_type
+      value: enable
+  - name: bgp_asn_3
+    description: Always
+    default: 64000
+    type_hint: text
+  - name: bgp_asn_1234345
+    description: Only Enabled number 3
+    default: 64003
+    type_hint: text
+    toggle_hint:
+      source: bgp_type
+      value: enable
+  - name: bgp_asn_asdfasdf
+    description: Only Disabled once more
+    default: 64007
+    type_hint: text
+    toggle_hint:
+      source: bgp_type
+      value: disable
+
+snippets:
+  - name: check_hostname
+    cmd: op
+    cmd_str: <show><system><info></info></system></show>
+    outputs:
+      - name: hostname
+        capture_pattern: result/system/hostname
+  - name: set_hostname
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    file: device_system.xml
+    when: hostname != FW_NAME

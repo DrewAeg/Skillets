@@ -1,10 +1,15 @@
+venv*
 terraform.tfvars
 terraform.tfstate
 terraform.tfstate.backup
+.terraform.lock*
 .terraform
 .idea
 .DS_Store
-
+.cnc_plan
+Pipfile*
+.pipenv_init_done
+venv*
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

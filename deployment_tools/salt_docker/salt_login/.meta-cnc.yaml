@@ -1,0 +1,38 @@
+# curl -sSk https://localhost:8000/login     -H 'Accept: application/json'     -d username=salt     -d password=well_hello_there -d eauth=sharedsecret
+
+# This is an example .meta-cnc.yaml file. This will allow Panhandler to consume this terraform project
+name: provisioner_login
+
+# label should be a human readable label that conveys what this skillet will do
+label: Get Login Auth Token
+
+# description is a longer more informative version of a label
+description: Logs in to the API auth session
+
+# type instructs Panhandler how to consume this skillet
+type: rest
+
+# extends allows you to include other skillets along with this one
+extends:
+
+# labels allow extensible configuration options per skillet type. For example, labels can be used to
+# group multiple skillets of the same type (pan-os skillets labeled as version: 9.0 for example)
+labels:
+  collection: Deployment Tools
+
+# Variables will be presented to the user via the Panhandler GUI. These values will then be passed to
+# the terraform binary as '--var' options, thus overriding any tfvars entries.
+# Variable names MUST match the names of the defined terraform variables
+variables:
+  - name: local_port
+    description: Local Port
+    default: 8081
+    type_hint: number
+    attrs:
+      min: 8000
+      max: 69000
+
+snippets:
+  - name: deploy_panhandler_dev
+    path: https://localhost:{{ provision_port }}/api/?type=keygen&user={{ TARGET_USERNAME }}&password={{ TARGET_PASSWORD }}
+

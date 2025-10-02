@@ -1,10 +1,18 @@
-name: all_inputs_testing_725D7C6A-FC3B-4B9E-BBCB-EC5FDA94C4CE
-label: All Inputs Testing
+name: depends_testing_725D7C6A-FC3B-4B9E-BBCB-EC5FDA94C4CE
+label: Depends Testing
 
 description: |
   Test for all input types
 
 type: template
+
+# optional depends section - must be configured as a list of dicts, each dict containing name, url, and optional branch
+depends:
+  - name: Iron-Skillet V9.1
+    url: https://github.com/PaloAltoNetworks/iron-skillet.git
+    branch: panos_v9.1
+  - name: Panos-Tools
+    url: https://github.com/scotchoaf/panos_tools.git
 
 # Labels allow grouping and type specific options and are generally only used in advanced cases
 labels:
@@ -44,9 +52,7 @@ variables:
     description: Interface by Checkbox
     default: not-saved
     type_hint: checkbox
-    cbx_list:
-      - key: True
-        value: True
+    source: interface_names
   - name: float_test
     description: Float Test
     default: 1.1
@@ -58,14 +64,6 @@ variables:
     attributes:
       min: 50
       max: 500
-  - name: list_test
-    description: hidden_list_Test
-    default: [1, 2, 4]
-    type_hint: hidden
-  - name: list_test_2
-    description: Another List
-    default: [1, 2, 4]
-    type_hint: list
 
 # Snippets is an ordered list of configuration xml fragments that will be pushed to the PAN-OS NGFW. The xpath
 # determines where in the configuration hierarchy the xml fragment will be set. 'file' indicates the name of the file
