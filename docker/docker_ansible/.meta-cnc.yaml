@@ -1,11 +1,10 @@
-name: docker_ansible_test_001
-label: Docker Ansible Example
-description: An example docker skillet that executes an Ansible Playbookk found in this directory
-
+name: ansible_test
+label: 000.3 docker test
+description: Ansible Ping Test
 type: docker
 
 labels:
-  collection: Example Skillets
+  collection: experimental
 
 variables:
   - name: ip_address
@@ -25,10 +24,11 @@ variables:
     default: show system info
     type_hint: text
 
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
 snippets:
   - name: ansible_test
-    image: registry.gitlab.com/panw-gse/as/panos_skillet_tools:dev
+    image: paloaltonetworks/pantools
     cmd: |
       ansible-playbook -i 'panorama-1,  ' op_cmd_example.yml
-      -e 'cli="{{ cli }}"'
-      -e '{"provider": {"ip_address": "{{ ip_address }}", "username": "{{ username }}", "password": "{{ password }}"}}'
+      -e 'provider={"ip_address": "{{ ip_address }}", "username": "{{ username }}", "password": "{{ password }}"}'

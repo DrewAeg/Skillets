@@ -1,0 +1,20 @@
+name: docker_test_0-000002
+label: 000.2 docker test
+description: Alpine linux test
+type: docker
+
+labels:
+  collection: experimental
+
+variables:
+  - name: FW_NAME
+    description: Firewall hostname
+    default: panos-01
+    type_hint: text
+
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+snippets:
+  - name: alpine_test
+    image: alpine
+    cmd: ls -al
